@@ -32,7 +32,7 @@ git init
 
 (4) Create a README.md file
 ```
-echo "# Tutorial for setting up a go devcontainer and programming in go" > README.md
+echo "# Tutorial for setting up a go devcontainer and programming in go. https://colbyeagan.github.io/comp423-course-notes/tutorials/go-setup/" > README.md
 git add README.md
 git commit -m "Initial commit with README"
 ```
@@ -108,6 +108,10 @@ git push --set-upstream origin main
 
 `postCreateCommand` runs commands after creating the container to install necesarry parts of the dev environment. In this case we wish to add a go mod file to the directory and install go.
 
+!!! note "Go mod subcommand"
+
+    We take care of running `go mod` in the postCreateCommand. This means the user does not have to worry about creating the `go.mod` file which manages go dependencies. If you would prefer more control you can remove this command from the postCreateCommand line and run it yourself after creating the dev container.
+
 (5) Reopen your project in your devcontainer by pressing `f1` and typing (and selecting) "Dev Containers: Reopen in Container".
 
 (6) Run `go version`. Your terminal should show something like this:
@@ -145,6 +149,13 @@ func main() {
 ``` 
 go run main.go
 ```   
+Alternativley, we can build and then run our program in two seperate commands. 
+```
+go build -o <meaningful-output-name> main.go
+./<meaningful-output-name>
+```
+!!! note "go run vs build"
+    The go subcommand `go build` is similar to `gcc` in the C programming language in that it compiles into an executable binary file which is then run in another step. `go run` on the other hand compiles into a binary file, runs it immediatley, and then removes this binary executable when the program finishes. This is a useful for running go programs quicly to see the output.
 
 Your console should look like this!  
 ![Go version screenshot](Screenshot2.png){ align=left }  
@@ -176,3 +187,7 @@ If changes havent pushed, make sure that your remote url is accurate.
 
 ### Conclusion  
 This is all for now! You have just created a git repo, hosted it on github, made a dev container, configrued it for go, and ran a go program within the container!
+
+#### References
+
+[1] K. Jordan, “Starting a static website project with MkDocs,” COMP423, [https://comp423-25s.github.io/resources/MkDocs/tutorial/](https://comp423-25s.github.io/resources/MkDocs/tutorial/) (accessed Jan. 26, 2025). 
