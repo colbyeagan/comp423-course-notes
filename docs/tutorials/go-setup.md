@@ -17,7 +17,7 @@
 
 (1) Open the terminal on your computer 
 
-(2) Create a new directory for your project by using the cd command to switch into your directory of choice then creating the project dir. 
+(2) Create a new directory for your project by using the `mkdir` command, then switch into your new directory by using the `cd` command. 
 
 ``` py
 mkdir comp423-go-tutorial
@@ -48,7 +48,7 @@ git commit -m "Initial commit with README"
 
 
 
-#### (C) Conect your Local and Remote Repo
+#### (C) Next, conect your Local and Remote Repo
 
 (1) Add GitHub repo as remote
 
@@ -60,21 +60,21 @@ git remote add origin https://github.com/<your-username>/comp423-go-tutorial.git
 
     Replace the parts of the link between <> with your username!
 
-(2) Push your local commits to the remote repository 
+(2) Push your local commits to the remote repository. Ensure that your primary branch is named main. 
 
 ```
 git push --set-upstream origin main
 ```
 !!! note 
 
-    If there are issues with your repo, use git status and git log to debug. Ensure that your main branch is named main on origin
+    If there are issues with your repo, use git status and git log to debug.
 
 
 
 ### Setting up the Development Environment  
 * Inspiration taken from COMP423 [Starting a Static Website tutorial.](https://comp423-25s.github.io/resources/MkDocs/tutorial/)
 
-(1) Open your repository directory in VS Code. 
+(1) Open the `comp423-go-tutorial` repository you just made in VS Code. 
 
 (2) Install "Dev Containers" extension for VS Code.
 
@@ -110,7 +110,7 @@ git push --set-upstream origin main
 
 (5) Reopen your project in your devcontainer by pressing `f1` and typing (and selecting) "Dev Containers: Reopen in Container".
 
-(6) Run go version. Your terminal should show something like this:
+(6) Run `go version`. Your terminal should show something like this:
 
 
 ![Go version screenshot](screenshot.png){ align=left }    
